@@ -1,0 +1,13 @@
+[user]
+	useConfigOnly = true
+
+[credential]
+	helper = store
+
+[core]
+	editor = vim
+    excludesfile = ~/.gitignore_global
+
+# Allow local customizations in the .gitconfig_local file
+[include]
+	path = ~/.gitconfig_local

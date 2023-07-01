@@ -1,0 +1,33 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+    shell:
+        stderr: true
+
+- clean: 
+    ~/:
+        force: true
+    ~/.config:
+        recursive: true
+
+- link:
+    ~/.config/zellij/config.kdl: zellij
+    ~/.gitconfig: 
+        force: true
+    ~/.gitignore_global:
+    ~/.vimrc: 
+    ~/.oh-my-zsh/custom/plugins:         
+        if: 'test -d $HOME/.oh-my-zsh'
+        path: zsh/plugins 
+        force: true
+    ~/.zshrc: 
+        path: zshrc
+        force: true
+
+- create:
+    - ~/downloads
+
+- shell:
+    - [git submodule sync --recursive, Synchronizes all submodules and any nested submodules within] 
+    - [git submodule update --init --recursive, Installing submodules]
